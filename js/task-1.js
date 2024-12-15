@@ -8,3 +8,4 @@ categories.forEach(category => {
   console.log(`Category: ${title.textContent}`);
   console.log(`Elements: ${numberEl.length}`);
 });
+
