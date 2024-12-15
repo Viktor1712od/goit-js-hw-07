@@ -1,32 +1,8 @@
-class StringBuilder {
-  #value;
+const inputName = document.querySelector("input#name-input");
+const outputName = document.querySelector("span#name-output");
 
-  constructor(initialValue) {
-      this.#value = initialValue;
-  }
+inputName.addEventListener("input", () => {
+    outputName.textContent = inputName.value.trim() || "Anonymous";
+});
 
-  getValue() {
-      return this.#value;
-  }
-
-  padEnd(str) {
-      this.#value = `${this.#value}${str}`;
-  }
-
-  padStart(str) {
-      this.#value = `${str}${this.#value}`;
-  }
-
-  padBoth(str) {
-      this.#value = `${str}${this.#value}${str}`;
-  }
-}
-
-const builder = new StringBuilder(".");
-console.log(builder.getValue()); // "."
-builder.padStart("^");
-console.log(builder.getValue()); // "^."
-builder.padEnd("^");
-console.log(builder.getValue()); // "^.^"
-builder.padBoth("=");
-console.log(builder.getValue()); // "=^.^="
+inputName.classList.add("input-style");
